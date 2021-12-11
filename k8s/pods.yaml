@@ -4,7 +4,6 @@ metadata:
   name: "goserver"
   labels:
     app: "goserver"
-
 spec:
   containers:
     - name: goserver

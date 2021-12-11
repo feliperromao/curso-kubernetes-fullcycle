@@ -60,3 +60,9 @@ kubectl delete pod POD_NAME
 ```sh
 kubectl port-forward pod/goserver 8080:8080
 ```
+
+
+- Listando os replicasets
+```sh
+kubectl get replicasets
+```
