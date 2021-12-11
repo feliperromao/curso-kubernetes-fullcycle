@@ -45,3 +45,18 @@ kubectl config get-clusters
 ```sh
 kubectl config use-context kind-fullcycle
 ```
+
+- Criando um pod
+```sh
+kubectl apply -f k8s/pods.yaml
+```
+
+- Excluindo um pod
+```sh
+kubectl delete pod POD_NAME
+```
+
+- Compartilhando porta do pod temporariamente
+```sh
+kubectl port-forward pod/goserver 8080:8080
+```
