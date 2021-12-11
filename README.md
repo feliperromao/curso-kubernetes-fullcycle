@@ -1,6 +1,11 @@
 # Kubernetes
 Curso de Kubernetes da full cycle
 
+## Ordem de importancia no kubernetes
+1. Deployment
+2. Replicaset
+3. Pod
+
 ## Comandos kind
 
 - Criar novo cluster com kind
@@ -56,13 +61,22 @@ kubectl apply -f k8s/pods.yaml
 kubectl delete pod POD_NAME
 ```
 
+- Descrevendo/Analisando um pod
+```sh
+kubectl describe pod goserver-59d8849d76-7hj6b
+```
+
 - Compartilhando porta do pod temporariamente
 ```sh
 kubectl port-forward pod/goserver 8080:8080
 ```
 
-
 - Listando os replicasets
 ```sh
 kubectl get replicasets
+```
+
+- Excluindo um replicaset
+```sh
+kubectl delete replicaset REPLICASET_NAME
 ```
