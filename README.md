@@ -35,3 +35,13 @@ kubectl cluster-info --context kind-kind
 kubectl get nodes
 ```
 
+- Listandos os clusters
+```sh
+kubectl config get-clusters
+```
+
+- Mudando para outro cluster (context)
+
+```sh
+kubectl config use-context kind-fullcycle
+```
