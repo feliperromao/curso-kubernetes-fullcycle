@@ -10,7 +10,7 @@ Curso de Kubernetes da full cycle
 
 - Criar novo cluster com kind
 ```sh
-./kind create cluster
+~/./kind create cluster
 ```
 
 - Criando cluster a partir de um arquivo de config
@@ -20,12 +20,12 @@ Curso de Kubernetes da full cycle
 
 - Listando os clusters
 ```sh
-./kind get clusters
+~/./kind get clusters
 ```
 
 - Excluindo um cluster
 ```sh
-./kind delete clusters CLUSTER_NAME
+~/./kind delete clusters CLUSTER_NAME
 ```
 
 ## Comandos kubectl
@@ -79,4 +79,18 @@ kubectl get replicasets
 - Excluindo um replicaset
 ```sh
 kubectl delete replicaset REPLICASET_NAME
+```
+
+- Rollout de deployments
+
+```sh
+kubectl rollout history deployment DEPLOYMENT_NAME
+```
+
+```sh
+kubectl rollout undo deployment DEPLOYMENT_NAME
+```
+
+```sh
+kubectl rollout undo deployment DEPLOYMENT_NAME --to-revision=1
 ```
