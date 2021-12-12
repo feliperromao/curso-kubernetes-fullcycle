@@ -99,3 +99,13 @@ kubectl rollout undo deployment DEPLOYMENT_NAME --to-revision=1
 ```sh
 kubectl port-forward svc/goserver-service 8080:8080
 ```
+
+- Utilizando o proxy para acessar a API do Kubernetes
+```sh
+kubectl proxy --port=8083
+```
+- Acessando a API
+> http://127.0.0.1:8083/
+
+- API de services
+> http://127.0.0.1:8083/api/v1/namespaces/default/services/goserver-service
