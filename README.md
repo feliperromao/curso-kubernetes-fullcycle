@@ -94,3 +94,8 @@ kubectl rollout undo deployment DEPLOYMENT_NAME
 ```sh
 kubectl rollout undo deployment DEPLOYMENT_NAME --to-revision=1
 ```
+
+- Redirecionando portas para o service
+```sh
+kubectl port-forward svc/goserver-service 8080:8080
+```
