@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: goserver-service
+spec:
+  selector:
+    app: goserver
+  type: LoadBalancer
+  ports:
+    - name: goserver-service
+      port: 8080 # Porta do service (this file)
+      targetPort: 8000 # Porta do container, caso seja diferente da porta do service
+      protocol: TCP
