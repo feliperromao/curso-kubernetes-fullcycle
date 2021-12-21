@@ -25,14 +25,14 @@ Curso de Kubernetes da full cycle
 
 - Excluindo um cluster
 ```sh
-~/./kind delete clusters CLUSTER_NAME
+~/./kind delete clusters fullcycle
 ```
 
 ## Comandos kubectl
 - Logando no cluster criado com o kind no kubectl
 
 ```sh
-kubectl cluster-info --context kind-kind
+kubectl cluster-info --context kind-fullcycle
 ```
 
 - Listando os nodes
