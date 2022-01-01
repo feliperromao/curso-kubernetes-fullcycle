@@ -18,12 +18,22 @@ spec:
         - name: goserver
           image: "feliperomao07/hello-go:v8.3"
           resources:
-            limits:
-              memory: 512Mi
-              cpu: "1"
+            # Minimo requerido
             requests:
-              memory: 256Mi
-              cpu: "0.2"
+              cpu: 100m
+              memory: 20Mi
+
+            # Máximo que o pode usar
+            limits:
+              cpu: 500m
+              memory: 25Mi
+
+          startupProbe:
+            httpGet:
+              path: /healthz
+              port: 8000 # Porta do container
+            periodSeconds: 3
+            failureThreshold: 30
 
           readinessProbe:
             httpGet:
@@ -31,7 +41,7 @@ spec:
               port: 8000 # Porta do container
             periodSeconds: 3
             failureThreshold: 1
-            initialDelaySeconds: 10 # Aguardar 10 segundo para começar a verificar
+            # initialDelaySeconds: 10 # Aguardar 10 segundo para começar a verificar
           
           livenessProbe:
             httpGet:
@@ -41,7 +51,7 @@ spec:
             failureThreshold: 3
             timeoutSeconds: 1
             successThreshold: 1
-            initialDelaySeconds: 15 # Aguardar 10 segundo para começar a verificar
+            # initialDelaySeconds: 15 # Aguardar 10 segundo para começar a verificar
 
           envFrom:
             - configMapRef:
