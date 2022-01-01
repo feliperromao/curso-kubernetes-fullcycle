@@ -109,3 +109,26 @@ kubectl proxy --port=8083
 
 - API de services
 > http://127.0.0.1:8083/api/v1/namespaces/default/services/goserver-service
+
+
+- Rodando o watch nos pods
+```sh
+kubectl apply -f k8s/deployment.yaml && watch -n1 kubectl get pods
+```
+
+- Consultando consumo de recursos de um POD
+```sh
+kubectl top pod goserver-547665f849-6xdr4
+```
+
+
+- Monitrando uso de recursos
+```sh
+watch -n1 kubectl get hpa
+```
+
+
+- Teste de stress com fortio
+```sh
+kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 800 -t 120s -c 70 "http://goserver-service:8080/healthz"
+```

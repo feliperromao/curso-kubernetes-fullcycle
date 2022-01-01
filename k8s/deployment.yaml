@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: goserver
-          image: "feliperomao07/hello-go:v8.3"
+          image: "feliperomao07/hello-go:v9"
           resources:
             # Minimo requerido
             requests:
@@ -35,22 +35,22 @@ spec:
             periodSeconds: 3
             failureThreshold: 30
 
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 8000 # Porta do container
-            periodSeconds: 3
-            failureThreshold: 1
+          # readinessProbe:
+          #   httpGet:
+          #     path: /healthz
+          #     port: 8000 # Porta do container
+          #   periodSeconds: 3
+          #   failureThreshold: 1
             # initialDelaySeconds: 10 # Aguardar 10 segundo para começar a verificar
           
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: 8000 # Porta do container
-            periodSeconds: 5
-            failureThreshold: 3
-            timeoutSeconds: 1
-            successThreshold: 1
+          # livenessProbe:
+          #   httpGet:
+          #     path: /healthz
+          #     port: 8000 # Porta do container
+          #   periodSeconds: 5
+          #   failureThreshold: 3
+          #   timeoutSeconds: 1
+          #   successThreshold: 1
             # initialDelaySeconds: 15 # Aguardar 10 segundo para começar a verificar
 
           envFrom:

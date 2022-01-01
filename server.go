@@ -25,7 +25,6 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello, I'm %s. I'm %s.", name, age)
 }
 
-
 func ConfigMap(w http.ResponseWriter, r *http.Request) {
 	data, err := ioutil.ReadFile("/go/myfamily/family.txt")
 	if err != nil {
@@ -44,7 +43,7 @@ func Healthz(w http.ResponseWriter, r *http.Request) {
 
 	duration := time.Since(startedAt)
 
-	if duration.Seconds() < 10 || duration.Seconds() > 30 {
+	if duration.Seconds() < 10 {
 		w.WriteHeader(500)
 		w.Write([]byte(fmt.Sprintf("Duration: %v", duration.Seconds())))
 	} else {
