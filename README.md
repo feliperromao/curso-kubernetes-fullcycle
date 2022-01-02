@@ -146,3 +146,10 @@ kubectl get storageclass
 ```sh
 kubectl get pvc
 ```
+
+## Statefulset
+- Deletando statefulset
+
+```sh
+kubectl delete statefulset mysql
+```
