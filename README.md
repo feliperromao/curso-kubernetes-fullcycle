@@ -132,3 +132,17 @@ watch -n1 kubectl get hpa
 ```sh
 kubectl run -it fortio --rm --image=fortio/fortio -- load -qps 800 -t 120s -c 70 "http://goserver-service:8080/healthz"
 ```
+
+
+
+## Storage
+
+- Listando os Storage Class
+```sh
+kubectl get storageclass
+```
+
+- Listando os Persistent Volume Claim
+```sh
+kubectl get pvc
+```
