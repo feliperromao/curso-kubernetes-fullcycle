@@ -202,3 +202,11 @@ kubectl config set-context dev
 ```sh
 kubectl config use-context dev
 ```
+
+
+## Service Accounts
+
+- Listando
+```sh
+kubectl get serviceaccounts
+```
