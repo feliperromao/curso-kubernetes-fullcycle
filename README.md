@@ -153,3 +153,52 @@ kubectl get pvc
 ```sh
 kubectl delete statefulset mysql
 ```
+
+## Namespaces
+- Listando namespates
+```sh
+kubectl get ns
+```
+
+- Criando um novo namespace
+```sh
+kubectl create ns dev
+```
+
+- Listando os pods em um determinado namespace
+```sh
+kubectl get po -n=<NAMESPACE>
+```
+
+- Aplicando uum objeto em um namespace
+```sh
+kubectl apply -f <OBJECT PATH> -n=<NAMESPACE>
+```
+
+
+## Contextos
+
+- Visualizando configurações
+```sh
+kubectl config view
+```
+
+- Visualizando contexto atual
+```sh
+kubectl config current-context
+```
+
+- Criando novo context
+```sh
+kubectl config set-context dev --namespace=dev --cluster=kind-fullcycle --user=kind-fullcycle
+```
+
+- Setando context como current
+```sh
+kubectl config set-context dev
+```
+
+- Usando o contexto
+```sh
+kubectl config use-context dev
+```
